@@ -1,0 +1,15 @@
+<div class="tweet col-md-6 offset-md-3">
+  <div class="card mb-4 shadow-sm">
+    <h5 class="card-header text-dark">
+      <%= tweet.user_name %>
+      <small class="text-muted">
+        <%= link_to "@#{tweet.user_screen_name}", "https://twitter.com/#{tweet.user_screen_name}", target: "_blank" %>
+      </small>
+    </h5>
+    <div class="card-body">
+      <p class="card-text"><%= simple_format(tweet.content).gsub(URI.regexp(["http", "https"]), '<a href="\0">\0</a>').html_safe %></p>
+      <p class="card-text"><small class="text-muted">Published on <%= tweet.tweeted_at.in_time_zone("Eastern Time (US & Canada)") %></small></p>
+    </div>
+  </div>
+</div>
+<div class="w-100 d-none d-md-block"></div>

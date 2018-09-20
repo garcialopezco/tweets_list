@@ -1,0 +1,14 @@
+<div class="top-header container text-center">
+  <h3>The Hottest Tweets</h3>
+  <h5 class="text-muted">Select Topic:</h5>
+
+  <%= link_to "Ruby on Rails", root_path(topic: "Ruby on Rails"), class: link_class(params[:topic], "Ruby on Rails") %> |
+  <%= link_to "ReactJS", root_path(topic: "ReactJS"), class: link_class(params[:topic], "ReactJS") %> |
+  <%= link_to "Linux", root_path(topic: "Linux"), class: link_class(params[:topic], "Linux") %>
+</div>
+
+<div id="tweets-list" class="container">
+  <div class="row">
+    <%= render partial: "tweet", collection: @tweets %>
+  </div>
+</div>
