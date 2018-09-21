@@ -17,7 +17,7 @@ feature "List Tweets" do
     i_should_not_see_any_tweet
   end
   
-  scenario "selecting Healthcare topic" do
+  scenario "selecting Ruby on Rails topic" do
     when_i_enter_the_site
     and_i_select_topic("Ruby on Rails")
     i_should_see_ten_tweets_for_topic
